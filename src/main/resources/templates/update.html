@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Data</title>
+</head>
+<body>
+<h1>Update Data</h1>
+<form action="/update" method="post">
+    <label>Baibaidaikin:</label><input type="text" name="baibaidaikin" value="${data.baibaidaikin}"><br>
+    <label>Kainushi Shimei:</label><input type="text" name="kainushi[0].shimei" value="${data.kainushi[0].shimei}"><br>
+    <label>Kainushi Jusho:</label><input type="text" name="kainushi[0].jusho" value="${data.kainushi[0].jusho}"><br>
+    <label>Urinushi Shimei:</label><input type="text" name="urinushi[0].shimei" value="${data.urinushi[0].shimei}"><br>
+    <label>Urinushi Jusho:</label><input type="text" name="urinushi[0].jusho" value="${data.urinushi[0].jusho}"><br>
+    <label>Checkbox:</label><input type="checkbox" name="has_feature_checkbox" ${data.has_feature_checkbox == true ? 'checked' : ''} value="true"><br>
+    <input type="submit" value="Save">
+</form>
+<a href="/">Back to Home</a>
+</body>
+</html>

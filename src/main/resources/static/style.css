@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+h1, h2, h3 {
+    color: #333;
+}
+form {
+    margin-top: 20px;
+}
+input[type="file"], select, input[type="number"], input[type="text"] {
+    margin-right: 10px;
+    padding: 5px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+label {
+    margin-right: 10px;
+}

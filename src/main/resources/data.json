@@ -1,0 +1,547 @@
+{
+  "id": 9120,
+  "musubellDocumentId": 11298,
+  "lastUpdateAt": "2025-08-14T16:53:39",
+  "shoshiki": {
+    "id": 1,
+    "keiyakushoNo": 1,
+    "jusetsuNo": 1,
+    "bukkenSb": 0,
+    "baikei": {
+      "bes": "bes-01",
+      "bpm": "bpm-03",
+      "bsc": "bsc-01",
+      "bar": "bar-01",
+      "bat": "-",
+      "bat1": "-",
+      "bat2": "-"
+    },
+    "jusetsu": {
+      "jtm": "jtm-01",
+      "jtc": "jtc-01",
+      "jes": "jes-01",
+      "jse": "jse-01",
+      "jrb": "jrb-01",
+      "jle": "-"
+    }
+  },
+  "baikei": {
+    "bes": {
+      "tokkijiko_matsubi_ikayohaku_hyoji": true,
+      "horyuchiyoteichi_hyoji": false,
+      "horyuchiyoteichi_comment": "",
+      "tochi_gokeifudekazu": "3",
+      "tokkijiko_numbering": true,
+      "tochi_gokeimenseki": "面積面積面積面積面積面積面積面積面積面積面積面積面積",
+      "tokkijiko": [
+        {
+          "tokkijiko_honbun": "",
+          "ikabesshi": false
+        }
+      ],
+      "tochi": [
+        {
+          "chibanmae": "地番前１",
+          "shozai": "所在１所在１所在１所在１所在１所在１所在１所在１所在",
+          "mochibun1": "持ち分１tử",
+          "chibanato": "地番後１",
+          "mochibun2": "持ち分１mẫu",
+          "chiseki": "11,111,111",
+          "chimoku1": "",
+          "kanma": true,
+          "chimoku2": "地目１"
+        },
+        {
+          "chibanmae": "chi2t",
+          "shozai": "shozai 2 nhập half-width",
+          "mochibun1": "mochibun2",
+          "chibanato": "chi2s",
+          "mochibun2": "mochibu2m",
+          "chiseki": "22,222,222",
+          "chimoku1": "",
+          "kanma": true,
+          "chimoku2": "chi2m"
+        },
+        {
+          "chibanmae": "地番前3",
+          "shozai": "所在3 shozai 3所在3 shozai 3所在",
+          "mochibun1": "mochibun３",
+          "chibanato": "地番後3",
+          "mochibun2": "持ち分３mẫu",
+          "chiseki": "33,333,333",
+          "chimoku1": "",
+          "kanma": false,
+          "chimoku2": "地目３"
+        }
+      ]
+    },
+    "bsc": {
+      "urinushi": "vvvvvvvvvv",
+      "urinushishomei": [
+        {
+          "jusho": "売主１＿住所売主１＿住所売主１＿住所売主１＿住所売主１＿住所売主１＿住所売主１＿住所売主１＿住所売主１＿住所売主１＿住所売主１＿住所売主１＿住所売主１＿住所売主１＿住所売主１＿住所売主１＿",
+          "baikei_insatsushinai": false,
+          "shimei": "売主１＿氏名売主１＿氏名売主１＿氏名売主１＿氏名売主１＿氏名売主１＿氏名売主１＿氏名売主１＿氏名売主１＿氏名売主１＿氏名売主１＿氏名売主１＿氏名",
+          "urinushi_type": "売主",
+          "takkenshijoho_checkbox": true,
+          "sonohoka_type": "",
+          "takkenshijoho_shimei": "売主１＿氏名氏名１",
+          "takkenshijoho_torokubango": "売主１＿登録番号売主１＿登録番号売主１"
+        },
+        {
+          "jusho": "売主２＿住所 địa chỉ 売主２＿住所 địa chỉ 売主２＿住所 địa chỉ 売主２＿住所 địa chỉ 売主２＿住所 địa chỉ 売主２＿住所 địa chỉ 売主２＿",
+          "baikei_insatsushinai": false,
+          "shimei": "売主２＿住所 tên売主２＿住所 tên売主２＿住所 tên売主２＿住所 tên売主２＿住所 tên売主２＿住所 tên売主２＿住所 tên売主２＿住所 tên売主２＿住所 tên売主２＿",
+          "urinushi_type": "売主",
+          "takkenshijoho_checkbox": false,
+          "sonohoka_type": "",
+          "takkenshijoho_shimei": "",
+          "takkenshijoho_torokubango": ""
+        }
+      ],
+      "seisankijunbi": "0",
+      "tatakkengyoshajoho": [
+        {
+          "keiyakusho_tachiai_iran_hyojishinai": false,
+          "tatakkengyoshajoho_keiyasho_hoshajoho_hyojishinai": true,
+          "oinkenshashimei": "",
+          "kyotakusho_setsumei_sentaku2_bensaigyomuhoshokin_meisho": "東京法務局",
+          "setsumei_torihikishi_denwabango": "111111111111111111111",
+          "menkyo_nengappi_checkbox": false,
+          "daihyoshayakusho": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku2_bensaigyomuhoshokin_shozaichi": "東京都千代田区九段南1丁目1番15号",
+          "menkyo_nengappi": "2025-08-05",
+          "kyotakusho_setsumei": "1",
+          "tenpojoho_jimushomei": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "tenpojoho_yakushoku": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku1_eigyohoshokinkyotaku_shozaichi": "",
+          "kyotakusho_setsumei_sentaku2_hoshokinkyokaijimusho_meisho": "公益社団法人全国宅地建物取引業保証協会神奈川本部",
+          "oinkenyakusho": "",
+          "tenpojoho_jusho": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku2_torihikigyohoshokinkyotaku_meisho": "公益社団法人全国宅地建物取引業保証協会",
+          "setsumei_torihikishi_torokubango": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "daihyoshashimei": "",
+          "kyotakusho_setsumei_sentaku1_eigyohoshokinkyotaku_meisho": "",
+          "shogo": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku2_torihikigyohoshokinkyotaku_jusho": "東京都千代田区岩本町二丁目6番3号",
+          "shutaru_jimusho_shozaichi": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "setsumei_torihikishi_shimei": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "tenpojoho_jimushochona": "",
+          "kyotakusho_setsumei_sentaku2_hoshokinkyokaijimusho_shozaichi": "神奈川県横浜市中区住吉町6-76-3",
+          "menkyoshobango": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "setsumei_torihikishi_jijyuujimusho_jyusho": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "setsumei_torihikishi_jijyuujimusho_tenpo": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "torihikitaiyo": "買主（宅建業者）"
+        },
+        {
+          "keiyakusho_tachiai_iran_hyojishinai": false,
+          "tatakkengyoshajoho_keiyasho_hoshajoho_hyojishinai": true,
+          "oinkenshashimei": "",
+          "kyotakusho_setsumei_sentaku2_bensaigyomuhoshokin_meisho": "東京法務局",
+          "setsumei_torihikishi_denwabango": "111111111111111111111",
+          "menkyo_nengappi_checkbox": false,
+          "daihyoshayakusho": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku2_bensaigyomuhoshokin_shozaichi": "東京都千代田区九段南1丁目1番15号",
+          "menkyo_nengappi": "2025-08-05",
+          "kyotakusho_setsumei": "1",
+          "tenpojoho_jimushomei": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "tenpojoho_yakushoku": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku1_eigyohoshokinkyotaku_shozaichi": "",
+          "kyotakusho_setsumei_sentaku2_hoshokinkyokaijimusho_meisho": "公益社団法人不動産保証協会大分県本部",
+          "oinkenyakusho": "",
+          "tenpojoho_jusho": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku2_torihikigyohoshokinkyotaku_meisho": "公益社団法人不動産保証協会",
+          "setsumei_torihikishi_torokubango": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "daihyoshashimei": "",
+          "kyotakusho_setsumei_sentaku1_eigyohoshokinkyotaku_meisho": "",
+          "shogo": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku2_torihikigyohoshokinkyotaku_jusho": "東京都千代田区紀尾井町3番30号",
+          "shutaru_jimusho_shozaichi": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "setsumei_torihikishi_shimei": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "tenpojoho_jimushochona": "",
+          "kyotakusho_setsumei_sentaku2_hoshokinkyokaijimusho_shozaichi": "大分市新町 19-1",
+          "menkyoshobango": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "setsumei_torihikishi_jijyuujimusho_jyusho": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "setsumei_torihikishi_jijyuujimusho_tenpo": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "torihikitaiyo": ""
+        }
+      ],
+      "jisha_shutaru_jimusho_shozaichi": "【連携用】北海道札幌市中央区北３条東１丁目",
+      "tokuyaku_numbering": true,
+      "jisha_tenpojoho_jimushochona": "管理者　じゅう０１２３４５６７８９０１２３４５６７８９",
+      "tokuyaku": [
+        {
+          "ikabesshi": false,
+          "tokuyaku": ""
+        }
+      ],
+      "jisha_menkyo_nengappi": "2025-08-20",
+      "wakaregyoshajoho_keiyasho_hoshajoho_hyojishinai": true,
+      "torihikishi2_torokubango": "（京都部）第１号",
+      "jisha_daihyoshashimei": "１２３４５６７８９０１２３４５６７８",
+      "urinushi_chuoyose": false,
+      "torihiki_taiyo_tatakkengyosha_shasenhiki": false,
+      "kainushishomei_chuoyose": false,
+      "kainushi": "cccccccccccccc",
+      "jisha_shogo": "０１２３４５６７８９０１２３４５６７８９０１２３４５６",
+      "jisha_daihyoshayakusho": "代表取締役社長",
+      "jisha_menkyoshobango": "国土交通大臣　(14)第000777号",
+      "jisha_tenpojoho_jimushomei": "事業所１００１２３４５６７８９０１２３４５６７８９０１",
+      "honkeiyaku_tekisetsu_nengappi": "2025-08-30",
+      "kainushi_chuoyose": false,
+      "jisha_keiyakusho_tachiai_iran_hyojishinai": false,
+      "jisha_tenpojoho_yakushoku": "支社長",
+      "jisha_tenpojoho_jusho": "北海道札幌市中央区北１０条東１０丁目",
+      "kainushishomei": [
+        {
+          "jusho": "買主１＿住所買主１＿住所買主１＿住所買主１＿住所買主１＿住所買主１＿住所買主１＿住所買主１＿住所買主１＿住所買主１＿住所買主１＿住所買主１＿住所買主１＿住所買主１＿住所買主１＿住所買主１＿",
+          "baikei_insatsushinai": false,
+          "shimei": "買主１＿氏名買主１＿氏名\n買主１＿氏名\n買主１＿氏名\n買主１＿氏名買主１＿氏名買主１＿氏名買主１＿氏名買主１＿氏名買主１＿氏名買主１＿氏名買主１＿氏名",
+          "takkenshijoho_checkbox": true,
+          "kainushi_type": "買主",
+          "sonohoka_type": "",
+          "takkenshijoho_shimei": "買主１＿氏名氏名１",
+          "takkenshijoho_torokubango": "買主１＿登録番号買主１＿登録番号買主１"
+        },
+        {
+          "jusho": "買主２＿住所 địa chỉ 買主２＿住所 địa chỉ 買主２＿住所 địa chỉ 買主２＿住所 địa chỉ 買主２＿住所 địa chỉ 買主２＿住所 địa chỉ 買主２＿",
+          "baikei_insatsushinai": false,
+          "shimei": "買主２＿住所 tên買主２＿住所 tên買主２＿住所 tên買主２＿住所 tên買主２＿住所 tên買主２＿住所 tên買主２＿住所 tên買主２＿住所 tên買主２＿住所 tên買主２＿",
+          "takkenshijoho_checkbox": false,
+          "kainushi_type": "買主",
+          "sonohoka_type": "",
+          "takkenshijoho_shimei": "",
+          "takkenshijoho_torokubango": ""
+        }
+      ],
+      "torihikishi2_shimei": "テスト　次郎",
+      "tokuyaku_matsubi_ikayohaku_hyoji": true,
+      "page": "5",
+      "urinushishomei_chuoyose": false
+    },
+    "bpm": {
+      "seisankijunmenseki": "4,325,435",
+      "tetsukekin_kaijokijitsu": "2025-08-14",
+      "iyakukingaku_sentaku": "2",
+      "yushiriyo_naiyo1_yushishonin_shutokukijitsu": "2025-08-13",
+      "hikiwatashibi_sentaku": "1",
+      "yushiriyo_naiyo1_moshikomisaki": "1",
+      "zandaikin_nengappi_checkbox": false,
+      "hikiwatashibi2_nyuryoku": "345345345",
+      "yushiriyo_naiyo2_yushishonin_shutokukijitsu_checkbox": false,
+      "yushikeiyaku_kaijokijitsu": "2025-08-14",
+      "iyakukingaku3_nyuryoku": "12,123",
+      "baibaidaikin_sogaku": "999,999,999,999",
+      "yushiriyo_naiyo1_yushikingaku": "2",
+      "tetsukekin_kaijokijitsu_checkbox": false,
+      "naikin2_nengappi_checkbox": false,
+      "yushiriyo_naiyo2_yushikingaku": "4",
+      "yushiriyo_naiyo3_yushikingaku": "6",
+      "seisantanka": "345,345,435",
+      "zandaikin_nengappi": "2025-08-08",
+      "tetsukekin_teiketsu_haraigaku": "111,111,111,111",
+      "yushikeiyaku_kaijokijitsu_checkbox": false,
+      "naikin1_nengappi": "2025-08-06",
+      "yushiriyo_naiyo1_yushishonin_shutokukijitsu_checkbox": false,
+      "yushiriyo_naiyo3_yushishonin_shutokukijitsu": "2025-08-13",
+      "yushiriyo_naiyo2_moshikomisaki": "3",
+      "seisantaishoutochi": "2",
+      "seisantaishoutochi_sentaku3nyuryoku": "312312",
+      "yushiriyo_naiyo3_moshikomisaki": "5",
+      "naikin2_nengappi": "2025-08-07",
+      "baibaidaikin_ikkatsukessai": false,
+      "naikin2_kingaku": "33,333,333,333",
+      "naikin1_kingaku": "2,222,222,222",
+      "naikin1_nengappi_checkbox": false,
+      "baibaidaikin_shohizeihyoji": false,
+      "zandaikin_kingaku": "853,333,333,333",
+      "yushiriyo_umu": "1",
+      "yushiriyo_naiyo2_yushishonin_shutokukijitsu": "2025-08-14",
+      "yushiriyo_naiyo3_yushishonin_shutokukijitsu_checkbox": false
+    }
+  },
+  "jusetsu": {
+    "jtm": {
+      "urinushi": [
+        {
+          "urinushi": "https://slack.com/",
+          "urinushi_user": "様",
+          "urinushi_seller": "",
+          "urinushi_seller_select": "売主"
+        },
+        {
+          "urinushi": "",
+          "urinushi_user": "様",
+          "urinushi_seller": "",
+          "urinushi_seller_select": "上記代理人"
+        },
+        {
+          "urinushi": "",
+          "urinushi_user": "様",
+          "urinushi_seller": "",
+          "urinushi_seller_select": "上記後見人"
+        },
+        {
+          "urinushi": "",
+          "urinushi_user": "様",
+          "urinushi_seller": "１２３４５６７８９０",
+          "urinushi_seller_select": "その他フリーワード"
+        }
+      ],
+      "tatakkengyoshajoho": [
+        {
+          "keiyakusho_tachiai_iran_hyojishinai": false,
+          "tatakkengyoshajoho_keiyasho_hoshajoho_hyojishinai": true,
+          "oinkenshashimei": "",
+          "kyotakusho_setsumei_sentaku2_bensaigyomuhoshokin_meisho": "東京法務局",
+          "setsumei_torihikishi_denwabango": "111111111111111111111",
+          "menkyo_nengappi_checkbox": false,
+          "daihyoshayakusho": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku2_bensaigyomuhoshokin_shozaichi": "東京都千代田区九段南1丁目1番15号",
+          "menkyo_nengappi": "2025-08-05",
+          "kyotakusho_setsumei": "1",
+          "tenpojoho_jimushomei": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "tenpojoho_yakushoku": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku1_eigyohoshokinkyotaku_shozaichi": "",
+          "kyotakusho_setsumei_sentaku2_hoshokinkyokaijimusho_meisho": "公益社団法人全国宅地建物取引業保証協会神奈川本部",
+          "oinkenyakusho": "",
+          "tenpojoho_jusho": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku2_torihikigyohoshokinkyotaku_meisho": "公益社団法人全国宅地建物取引業保証協会",
+          "setsumei_torihikishi_torokubango": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "daihyoshashimei": "",
+          "kyotakusho_setsumei_sentaku1_eigyohoshokinkyotaku_meisho": "",
+          "shogo": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku2_torihikigyohoshokinkyotaku_jusho": "東京都千代田区岩本町二丁目6番3号",
+          "shutaru_jimusho_shozaichi": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "setsumei_torihikishi_shimei": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "tenpojoho_jimushochona": "",
+          "kyotakusho_setsumei_sentaku2_hoshokinkyokaijimusho_shozaichi": "神奈川県横浜市中区住吉町6-76-3",
+          "menkyoshobango": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "setsumei_torihikishi_jijyuujimusho_jyusho": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "setsumei_torihikishi_jijyuujimusho_tenpo": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "torihikitaiyo": "買主（宅建業者）"
+        },
+        {
+          "keiyakusho_tachiai_iran_hyojishinai": false,
+          "tatakkengyoshajoho_keiyasho_hoshajoho_hyojishinai": true,
+          "oinkenshashimei": "",
+          "kyotakusho_setsumei_sentaku2_bensaigyomuhoshokin_meisho": "東京法務局",
+          "setsumei_torihikishi_denwabango": "111111111111111111111",
+          "menkyo_nengappi_checkbox": false,
+          "daihyoshayakusho": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku2_bensaigyomuhoshokin_shozaichi": "東京都千代田区九段南1丁目1番15号",
+          "menkyo_nengappi": "2025-08-05",
+          "kyotakusho_setsumei": "1",
+          "tenpojoho_jimushomei": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "tenpojoho_yakushoku": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku1_eigyohoshokinkyotaku_shozaichi": "",
+          "kyotakusho_setsumei_sentaku2_hoshokinkyokaijimusho_meisho": "公益社団法人不動産保証協会大分県本部",
+          "oinkenyakusho": "",
+          "tenpojoho_jusho": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku2_torihikigyohoshokinkyotaku_meisho": "公益社団法人不動産保証協会",
+          "setsumei_torihikishi_torokubango": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "daihyoshashimei": "",
+          "kyotakusho_setsumei_sentaku1_eigyohoshokinkyotaku_meisho": "",
+          "shogo": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "kyotakusho_setsumei_sentaku2_torihikigyohoshokinkyotaku_jusho": "東京都千代田区紀尾井町3番30号",
+          "shutaru_jimusho_shozaichi": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "setsumei_torihikishi_shimei": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "tenpojoho_jimushochona": "",
+          "kyotakusho_setsumei_sentaku2_hoshokinkyokaijimusho_shozaichi": "大分市新町 19-1",
+          "menkyoshobango": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "setsumei_torihikishi_jijyuujimusho_jyusho": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "setsumei_torihikishi_jijyuujimusho_tenpo": "葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵葵",
+          "torihikitaiyo": ""
+        }
+      ],
+      "jisha_kyotakusho_setsumei_sentaku2_hoshokinkyokaijimusho_meisho": "公益社団法人全国宅地建物取引業保証協会北海道本部",
+      "jisha_shutaru_jimusho_shozaichi": "【連携用】北海道札幌市中央区北３条東１丁目",
+      "jisha_kyotakusho_setsumei_sentaku2_hoshokinkyokaijimusho_shozaichi": "札幌市中央区北1条西17-1",
+      "hidari_torikeitai_chukaikeitai_baikai": true,
+      "baibainushijoho3": [
+        {
+          "urinushi_jusho": "2222",
+          "urinushi_shimei": "2222222",
+          "baibainushi_seller_select": "売主",
+          "baibainushi_seller": ""
+        },
+        {
+          "urinushi_jusho": "123",
+          "urinushi_shimei": "123123",
+          "baibainushi_seller_select": "その他フリーワード",
+          "baibainushi_seller": "456546546"
+        }
+      ],
+      "setsumei_torihikishi_denwabango": "011-999-1010",
+      "hidari_torikeitai_chukaikeitai_dairi": false,
+      "baibainushijoho1": [
+        {
+          "kainushi_jusho": "11111111",
+          "kainushi_shimei": "111111",
+          "baibainushi_buyer": "",
+          "baibainushi_buyer_select": "買主"
+        },
+        {
+          "kainushi_jusho": "21312312",
+          "kainushi_shimei": "123123",
+          "baibainushi_buyer": "tt5454",
+          "baibainushi_buyer_select": "その他フリーワード"
+        }
+      ],
+      "jisha_tenpojoho_jimushochona": "管理者　じゅう０１２３４５６７８９０１２３４５６７８９",
+      "jisha_kyotakusho_setsumei": "1",
+      "jisha_kyotakusho_setsumei_sentaku2_bensaigyomuhoshokin_meisho": "東京法務局",
+      "jisha_menkyo_nengappi": "2025-08-20",
+      "jisha_daihyoshashimei": "１２３４５６７８９０１２３４５６７８",
+      "torihiki_taiyo_tatakkengyosha_shasenhiki": false,
+      "kainushi": [
+        {
+          "kainushi": "https://slack.com/",
+          "kainushi_user": "様",
+          "kainushi_buyer": "",
+          "kainushi_buyer_select": "買主"
+        },
+        {
+          "kainushi": "",
+          "kainushi_user": "様",
+          "kainushi_buyer": "",
+          "kainushi_buyer_select": "上記代理人"
+        },
+        {
+          "kainushi": "",
+          "kainushi_user": "様",
+          "kainushi_buyer": "",
+          "kainushi_buyer_select": "上記後見人"
+        },
+        {
+          "kainushi": "",
+          "kainushi_user": "様",
+          "kainushi_buyer": "１２３４５６７８９",
+          "kainushi_buyer_select": "その他フリーワード"
+        }
+      ],
+      "jisha_shogo": "０１２３４５６７８９０１２３４５６７８９０１２３４５６",
+      "jisha_daihyoshayakusho": "代表取締役社長",
+      "setsumeishojyuryo_nengappi": "2025-08-22",
+      "jisha_kyotakusho_setsumei_sentaku2_torihikigyohoshokinkyotaku_jusho": "東京都千代田区岩本町二丁目6番3号",
+      "setsumei_torihikishi_torokubango": "（京都部）第１号",
+      "jisha_menkyoshobango": "国土交通大臣　(14)第000777号",
+      "jisha_kyotakusho_setsumei_sentaku1_eigyohoshokinkyotaku_shozaichi": "",
+      "jisha_tenpojoho_jimushomei": "事業所１００１２３４５６７８９０１２３４５６７８９０１",
+      "hidari_torikeitai_chukaikeitai_urinushi": true,
+      "jisha_kyotakusho_setsumei_sentaku1_eigyohoshokinkyotaku_meisho": "",
+      "migi_torikeitai_chukaikeitai_dairi": true,
+      "jisha_tenpojoho_yakushoku": "支社長",
+      "jisha_kyotakusho_setsumei_sentaku2_bensaigyomuhoshokin_shozaichi": "東京都千代田区九段南1丁目1番15号",
+      "jisha_tenpojoho_jusho": "北海道札幌市中央区北１０条東１０丁目",
+      "setsumei_torihikishi_shimei": "テスト　次郎",
+      "migi_torikeitai_torihikikeitai": "1",
+      "hidari_torikeitai_torihikikeitai": "0",
+      "setsumei_torihikishi_jijyuujimusho_tenpo": "事業所１００１２３４５６７８９０１２３４５６７８９０１",
+      "setsumei_torihikishi_jijyuujimusho_jyusho": "渋谷区神宮前5-52-2",
+      "jisha_kyotakusho_setsumei_sentaku2_torihikigyohoshokinkyotaku_meisho": "公益社団法人全国宅地建物取引業保証協会"
+    },
+    "jes": {
+      "tochi1_biko_matsubi_ikayohaku_hyoji": true,
+      "tochi1_biko_numbering": true,
+      "tochi1": [
+        {
+          "chibanmae": "地番前１",
+          "shozai": "所在１所在１所在１所在１所在１所在１所在１所在１所在",
+          "mochibun1": "持ち分１tử",
+          "chibanato": "地番後１",
+          "mochibun2": "持ち分１mẫu",
+          "chiseki": "11,111,111",
+          "chimoku1": "",
+          "kanma": true,
+          "chimoku2": "地目１"
+        },
+        {
+          "chibanmae": "chi2t",
+          "shozai": "shozai 2 nhập half-width",
+          "mochibun1": "mochibun2",
+          "chibanato": "chi2s",
+          "mochibun2": "mochibu2m",
+          "chiseki": "22,222,222",
+          "chimoku1": "",
+          "kanma": true,
+          "chimoku2": "chi2m"
+        },
+        {
+          "chibanmae": "地番前3",
+          "shozai": "所在3 shozai 3所在3 shozai 3所在",
+          "mochibun1": "mochibun３",
+          "chibanato": "地番後3",
+          "mochibun2": "持ち分３mẫu",
+          "chiseki": "33,333,333",
+          "chimoku1": "",
+          "kanma": false,
+          "chimoku2": "地目３"
+        }
+      ],
+      "tochibaibaitaishomenseki_sentaku3_nyuryoku": "５３３４５３４５",
+      "horyuchiyoteichi_hyoji": false,
+      "horyuchiyoteichi_comment": "",
+      "tochi1_gokeimenseki": "面積面積面積面積面積面積面積面積面積面積面積面積面積",
+      "tochi1_gokeifudekazu": "3",
+      "sokuryozumen_sentaku": "1",
+      "tochi1_biko": [
+        ""
+      ],
+      "tochibaibaitaishomenseki_sentaku": "2"
+    },
+    "jrb": {
+      "assen2_kinyukikan": "3",
+      "yushiriyo_tokuyaku_kaijo_umusentaku": "1",
+      "taisho1_otsuku_tokinaiyo_numbering": true,
+      "taisho1_koku_tokinaiyo_matsubi_ikayohaku_hyoji": true,
+      "assen1_shodakushonin_shutokukijitsu": "2025-08-13",
+      "taisho1_otsuku_tokinaiyo_matsubi_ikayohaku_hyoji": true,
+      "kingaku1": "111,111,111,111",
+      "tokijiko_taisho2_otsuku_tokinaiyo": [
+        ""
+      ],
+      "tokijiko_taisho1_otsuku_umusentaku": "1",
+      "assen3_kingaku": "6",
+      "assen2_shodakushonin_shutokukijitsu": "2025-08-14",
+      "seisan_taishotochi_hani": "2",
+      "tokijiko_taisho1_shomeinengappi_checkbox": false,
+      "tokijiko_taisho1_koku_tokinaiyo": [
+        "信託：●●年●●月●●日受付第●●\n原因：●●年●●月●●日\n信託目録番号：第●●号\n委託者：●●\n受託者：●●\n受益者：●●\n※詳細は、別添「登記事項証明書」をご参照ください。",
+        "信託：●●年●●月●●日受付第●●\n原因：●●年●●月●●日\n信託目録番号：第●●号\n委託者：●●\n受託者：●●\n受益者：●●\n※詳細は、別添「登記事項証明書」をご参照ください。"
+      ],
+      "assen2_kingaku": "4",
+      "assen3_kinyukikan": "5",
+      "assen1_kingaku": "2",
+      "taisho1_koku_tokinaiyo_numbering": true,
+      "tokijiko_taisho1_shomeinengappi": "2025-08-14",
+      "yushiriyo_tokuyaku_kaijo_nengappi_checkbox": false,
+      "tokijiko_taisho2_koku_tokinaiyo": [
+        ""
+      ],
+      "assen3_shodakushonin_shutokukijitsu": "2025-08-13",
+      "tetsukekaijo_nengappi": "2025-08-14",
+      "tokijiko_taisho1_koku_jusho": "Data 所有者Data 所有者Data 所有者Data 所有者\nData 所有者Data 所有者Data 所有者\nData 所有者Data 所有者Data 所有者Data 所有者Data 所有者Da",
+      "assen3_shodakushonin_shutokukijitsu_checkbox": false,
+      "assen2_shodakushonin_shutokukijitsu_checkbox": false,
+      "assen1_shodakushonin_shutokukijitsu_checkbox": false,
+      "tokijiko_taisho1_koku_umusentaku": "1",
+      "baibaidaikin": "999,999,999,999",
+      "tetsukekaijo_nengappi_checkbox": false,
+      "iyakukin_sonohoka_kingaku": "12,123",
+      "seisan_tanka": "345,345,435",
+      "assen1_kinyukikan": "1",
+      "tokijiko_taisho1_koku_shimei": "Data 氏名Data 氏名Data 氏名Data 氏名Data 氏名Data 氏名Data 氏名Data 氏名\nData 氏名Data 氏名Data 氏名Data 氏名\nData 氏名Data 氏名",
+      "yushiriyo_tokuyaku_kaijo_nengappi": "2025-08-14",
+      "tokijiko_taisho1_otsuku_tokinaiyo": [
+        "抵当権設定：●●年●●月●●日受付第●●号\n債権額：金●●万円\n債務者：●●\n抵当権者：●●\n共同担保目録（●●）第●●号",
+        "根抵当権設定：●●年●●月●●日受付第●●号\n極度額：金●●万円\n債務者：●●\n根抵当権者：●●\n共同担保目録（●●）第●●号",
+        "信託：●●年●●月●●日受付第●●\n原因：●●年●●月●●日\n信託目録番号：第●●号\n委託者：●●\n受託者：●●\n受益者：●●\n※詳細は、別添「登記事項証明書」をご参照ください。"
+      ],
+      "seisan_taishotochi_hani_nyuryoku": "312312",
+      "iyakukin_sentaku": "2",
+      "seisan_kijun_menseki": "4,325,435"
+    }
+  },
+  "isDuplicateLock": false
+}
