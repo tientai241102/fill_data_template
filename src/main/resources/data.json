@@ -42,7 +42,7 @@
       "tochi": [
         {
           "chibanmae": "地番前１",
-          "shozai": "所在１所在１所在１所在１所在１所在１所在１所在１所在",
+          "shozai": "abc",
           "mochibun1": "持ち分１tử",
           "chibanato": "地番後１",
           "mochibun2": "持ち分１mẫu",
@@ -53,7 +53,7 @@
         },
         {
           "chibanmae": "chi2t",
-          "shozai": "shozai 2 nhập half-width",
+          "shozai": "abc",
           "mochibun1": "mochibun2",
           "chibanato": "chi2s",
           "mochibun2": "mochibu2m",

@@ -7,12 +7,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.groupingBy;
 
 public class ObjectFormatUtils {
     private static final ObjectMapper mapper = new ObjectMapper();
 
     public static String formatListToString(List<?> list, String type, Map<String, String[][]> tableData,String prefix) {
         StringBuilder sb = new StringBuilder();
+        String spec = handleDataArraySpec(list, type);
+        if (!spec.isEmpty()) {
+            return spec;
+        }
+
 
         for (int i = 0; i < list.size(); i++) {
             Map<String, Object> map = new HashMap<>();
@@ -44,6 +53,8 @@ public class ObjectFormatUtils {
 
         return sb.toString();
     }
+
+
 
     private static void appendTableDataForType(String type, Map<String, String[][]> tableData, Map<String, Object> map,String prefix) {
         String[][] newData;
@@ -154,6 +165,41 @@ public class ObjectFormatUtils {
         }
     }
 
+    private static String handleDataArraySpec(List<?> list, String type){
+        StringBuilder sb = new StringBuilder();
+        switch (type) {
+            case "tochi":
+                String keyGroupBy="shozai";
+                groupByDataArraySpec(list, type, sb,keyGroupBy, map -> safe(map.get("chibanmae")) + " 番 " + safe(map.get("chibanato")));
+                return sb.toString();
+
+            // Add more cases as needed
+            default:
+              return "";
+        }
+
+
+    }
+
+    private static void groupByDataArraySpec(List<?> list, String type, StringBuilder sb, String keyGroupBy, Function<Map, String> handleDataArraySpec) {
+        list.stream()
+                .collect(Collectors.groupingBy(o -> {
+                    Map<String, Object> map = mapper.convertValue(o, Map.class);
+                    return safe(map.get(keyGroupBy));
+                }))
+                .forEach((key, value) -> {
+                    sb.append(key);
+
+                    String joined = value.stream()
+                            .map(item -> {
+                                Map<String, Object> map = mapper.convertValue(item, Map.class);
+                                return handleDataArraySpec.apply(map);
+                            })
+                            .collect(Collectors.joining(", ")); // ngăn cách bằng dấu phẩy
+
+                    sb.append(" ").append(joined).append("\n");
+                });
+    }
 
 
 

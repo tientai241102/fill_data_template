@@ -81,7 +81,7 @@ public abstract class FillTemplateFactory {
     protected byte[] exportDataToWordFile(InputStream templateStream, Map<String, String> replacements, Map<String, String> objectWithDefaultData,   Map<String, String[][]> tableData, Map<String, String> objectWithLabel, Map<String, String> shortKeys) throws IOException {
         // Tìm và thay thế tất cả placeholder trong tài liệu
         XWPFDocument doc = new XWPFDocument(templateStream);
-        Pattern pattern = Pattern.compile("\\{\\{([^}]+)\\}\\}");
+        Pattern pattern = Pattern.compile("\\{\\{(.*?)\\}\\}");
         for (XWPFParagraph para : doc.getParagraphs()) {
             replacePlaceholdersInParagraph(doc,para, replacements, pattern, objectWithDefaultData,tableData, objectWithLabel, shortKeys);
         }

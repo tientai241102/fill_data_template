@@ -138,7 +138,47 @@ public class FillTemplateDemoService extends FillTemplateFactory {
 
         // --------------------- SHORT KEY OBJECT WITH LABEL ---------------------
 
-        shortKeys.put("short_key", "jusetsu.jrb.baibaidaikin");
+        shortKeys.put("M007-02_ARRAY_KEY1", "jusetsu.jes.tochi1");
+        shortKeys.put("M007-02_KEY10", "jusetsu.jes.tochi1_gokeimenseki");
+        shortKeys.put("M007-02_KEY11", "jusetsu.jes.shakuchitaisho_menseki");
+        shortKeys.put("M007-02_KEY12", "jusetsu.jes.ittiotatemono_nobetokomenseki");
+        shortKeys.put("M007-09_KEY2", "jusetsu.jrb.baibaidaikin");
+        shortKeys.put("M007-01_KEY4", "jusetsu.jtm.jisha_shogo");
+        shortKeys.put("M007-02_KEY8", "jusetsu.jes.ittiotatemono_shozai");
+        shortKeys.put("M007-02_KEY3", "jusetsu.jes.ittiotatemono_chibanmae");
+        shortKeys.put("M007-02_KEY4", "jusetsu.jes.ittiotatemono_chibanato");
+        shortKeys.put("M007-02_KEY9", "jusetsu.jes.tatemonomeisho");
+        shortKeys.put("M007-02_KEY10", "jusetsu.jes.senyububun_meisho");
+        shortKeys.put("M007-09_KEY2", "jusetsu.jrb.baibaidaikin");
+        shortKeys.put("M007-01_KEY1", "jusetsu.jtm.jisha_shogo");
+        shortKeys.put("M007-01_KEY2", "jusetsu.jtm.tatakkengyoshajoho[0].shogo");
+        shortKeys.put("M005-03_KEY1", "baikei.bpm.hikiwatashibi_sentaku");
+        shortKeys.put("M005-03_KEY2", "baikei.bpm.hikiwatashibi2_nyuryoku");
+        shortKeys.put("M005-03_KEY3", "baikei.bsc.honkeiyaku_tekisetsu_nengappi");
+        shortKeys.put("M007-02_KEY1", "jusetsu.jes.jukyo_hyoji");
+        shortKeys.put("M007-02_KEY2", "jusetsu.jes.tatemono_jushohyoji");
+        shortKeys.put("M007-02_KEY3", "jusetsu.jes.ittiotatemono_chibanmae");
+        shortKeys.put("M007-02_KEY4", "jusetsu.jes.ittiotatemono_chibanato");
+        shortKeys.put("M007-02_KEY5", "jusetsu.jes.tochi1[0].chibanmae");
+        shortKeys.put("M007-02_KEY6", "jusetsu.jes.tochi1[0].chibanato");
+        shortKeys.put("M007-09_KEY1", "jusetsu.jrb.kingaku1");
+        shortKeys.put("M007-02_KEY7", "jusetsu.jes.tochi1[0].shozai");
+        shortKeys.put("M007-02_KEY5", "jusetsu.jes.tochi1[0].chibanmae");
+        shortKeys.put("M007-02_KEY6", "jusetsu.jes.tochi1[0].chibanato");
+        shortKeys.put("M007-02_KEY8", "jusetsu.jes.ittiotatemono_shozai");
+        shortKeys.put("M007-02_KEY3", "jusetsu.jes.ittiotatemono_chibanmae");
+        shortKeys.put("M007-02_KEY4", "jusetsu.jes.ittiotatemono_chibanato");
+        shortKeys.put("M007-02_KEY9", "jusetsu.jes.tatemonomeisho");
+        shortKeys.put("M007-02_KEY7", "jusetsu.jes.tochi1[0].shozai");
+        shortKeys.put("M007-02_KEY5", "jusetsu.jes.tochi1[0].chibanmae");
+        shortKeys.put("M007-02_KEY6", "jusetsu.jes.tochi1[0].chibanato");
+        shortKeys.put("M007-02_KEY8", "jusetsu.jes.ittiotatemono_shozai");
+        shortKeys.put("M007-02_KEY3", "jusetsu.jes.ittiotatemono_chibanmae");
+        shortKeys.put("M007-02_KEY4", "jusetsu.jes.ittiotatemono_chibanato");
+        shortKeys.put("M007-02_KEY9", "jusetsu.jes.tatemonomeisho");
+        shortKeys.put("M007-01_KEY3", "jusetsu.jtm.jisha_shutaru_jimusho_shozaichi");
+        shortKeys.put("M007-01_KEY4", "jusetsu.jtm.jisha_shogo");
+        shortKeys.put("M007-01_KEY4", "jusetsu.jtm.jisha_shogo");
 
 
     }
