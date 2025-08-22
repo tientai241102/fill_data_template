@@ -72,6 +72,15 @@ public class FillTemplateDemoService extends FillTemplateFactory {
         objectWithDefaultData.put("iyakukingaku_sentaku", "☐ 1.手付金の額 \n☐ 2.売買代金の相当額 \n☐ 3.円");
         objectWithDefaultData.put("hikiwatashibi_sentaku", "☐ 1．売買代金全額受領日\n" + "☐ 2．");
 
+
+        objectWithDefaultData.put("jusetsu.jes.jukyo_hyoji","");
+        objectWithDefaultData.put( "jusetsu.jes.tatemono_jushohyoji","");
+        objectWithDefaultData.put("jusetsu.jes.ittiotatemono_chibanmae","");
+        objectWithDefaultData.put("jusetsu.jes.ittiotatemono_chibanato","");
+        objectWithDefaultData.put("jusetsu.jes.tochi1[0].chibanmae","");
+        objectWithDefaultData.put("jusetsu.jes.tochi1[0].chibanato","");
+
+
         // --- Declare Option RadioButton  ---
         RADIO_BUTTON_OPTIONS.put("hidari_torikeitai_torihikikeitai", new String[]{"売買", "交換"});
         RADIO_BUTTON_OPTIONS.put("migi_torikeitai_torihikikeitai", new String[]{"売買", "交換"});

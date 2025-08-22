@@ -5,6 +5,7 @@ import org.apache.poi.xwpf.usermodel.*;
 import org.apache.xmlbeans.XmlCursor;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -18,6 +19,7 @@ public class ReplaceTextUtils {
         if (paragraphRuns.isEmpty()) return;
         // Ghép toàn bộ text của các run lại
         StringBuilder concatenatedText = new StringBuilder();
+        Map<Integer,int[]> runWithPositionsOldAndNew = new HashMap<>();
         int runCount = paragraphRuns.size();
         int[] runEndIndices = new int[runCount];
         for (int i = 0; i < runCount; i++) {
@@ -45,8 +47,12 @@ public class ReplaceTextUtils {
 
         for (int[] range : placeholderCharRanges) {
             String key = text.substring(range[2], range[3]);
+            //M007-02_KEY3
+
             String replacement = getReplacementForKey(key, replacements, objectWithDefaultData, objectWithLabel, shortKeys);
             replacement = createTableForKeyIfPresent(para, tableData, key, replacement);
+            //_____________________
+
 
             // Xác định run bắt đầu và kết thúc bao phủ placeholder
             int startChar = range[0];
@@ -66,15 +72,31 @@ public class ReplaceTextUtils {
             String suffixInEndRun = endRunText.substring(Math.max(0, endChar - endRunStartPos));
 
             if (endRunIdx == startRunIdx) {
-                // Placeholder trong một run
-                newTextByRunIndex[startRunIdx] = prefixInStartRun + replacement + suffixInEndRun;
+                if ( newTextByRunIndex[startRunIdx] != null){
+                    int[] oldAndNewPos = runWithPositionsOldAndNew.get(startRunIdx);
+
+                    newTextByRunIndex[startRunIdx] =  newTextByRunIndex[startRunIdx].substring(0,oldAndNewPos[1]) + prefixInStartRun.substring(oldAndNewPos[0])+  replacement + suffixInEndRun;
+                }else {
+                    String startRunTextReplace = prefixInStartRun + replacement;
+                    runWithPositionsOldAndNew.put(startRunIdx, new int[]{Math.max(0, endChar - endRunStartPos), startRunTextReplace.length()});
+                    // Placeholder trong một run
+                    newTextByRunIndex[startRunIdx] = startRunTextReplace + suffixInEndRun;
+                }
+
             } else {
                 // Ghi replacement vào run bắt đầu, giữ CTRPr của run bắt đầu
-                newTextByRunIndex[startRunIdx] = prefixInStartRun + replacement;
+                if ( newTextByRunIndex[startRunIdx] != null){
+                    int[] oldAndNewPos = runWithPositionsOldAndNew.get(startRunIdx);
+
+                    newTextByRunIndex[startRunIdx] =  prefixInStartRun.substring(oldAndNewPos[0])+  replacement ;
+                }else {
+                    newTextByRunIndex[startRunIdx] = prefixInStartRun + replacement;
+                }
                 // Xóa nội dung các run ở giữa
                 for (int i = startRunIdx + 1; i < endRunIdx; i++) {
                     newTextByRunIndex[i] = "";
                 }
+                runWithPositionsOldAndNew.put(endRunIdx, new int[]{Math.max(0, endChar - endRunStartPos)});
                 // Giữ phần đuôi của run kết thúc
                 newTextByRunIndex[endRunIdx] = suffixInEndRun;
             }
@@ -115,7 +137,7 @@ public class ReplaceTextUtils {
         String replacement = replacements.get(extractedLabelKey);
         if (replacement == null) {
             String extractedKey = extractedLabelKey.contains(".") ? extractedLabelKey.substring(extractedLabelKey.lastIndexOf('.') + 1) : extractedLabelKey;
-            replacement = objectWithDefaultData.getOrDefault(extractedKey, ConstantUtils.STRING_NOT_FOUND);
+            replacement = objectWithDefaultData.containsKey(extractedKey)? objectWithDefaultData.get(extractedKey) : objectWithDefaultData.getOrDefault(extractedLabelKey,ConstantUtils.STRING_NOT_FOUND);
         }
         if (isKeyWithLabel){
             replacement = String.format(key, replacement);
