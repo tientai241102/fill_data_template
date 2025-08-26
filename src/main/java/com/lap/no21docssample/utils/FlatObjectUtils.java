@@ -25,7 +25,7 @@ public class FlatObjectUtils {
             });
         } else if (obj instanceof List || obj instanceof Object[]) {
             List<?> list = (List<?>) obj;
-            map.put(prefix, ObjectFormatUtils.formatListToString(list, type,tableData,prefix));
+            map.put(prefix, ObjectFormatUtils.formatListToString(list, type,tableData,prefix,map));
             for (int i = 0; i < list.size(); i++) {
                 flattenObjectToKeyValueMap(prefix + "[" + i + "]", list.get(i), map, objectWithDataType, radioButtonData, objectWithLabel,tableData);
             }

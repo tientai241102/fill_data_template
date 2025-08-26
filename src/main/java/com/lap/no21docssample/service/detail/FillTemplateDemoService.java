@@ -147,7 +147,6 @@ public class FillTemplateDemoService extends FillTemplateFactory {
 
         // --------------------- SHORT KEY OBJECT WITH LABEL ---------------------
 
-        shortKeys.put("M007-02_ARRAY_KEY1", "jusetsu.jes.tochi1");
         shortKeys.put("M007-02_KEY10", "jusetsu.jes.tochi1_gokeimenseki");
         shortKeys.put("M007-02_KEY11", "jusetsu.jes.shakuchitaisho_menseki");
         shortKeys.put("M007-02_KEY12", "jusetsu.jes.ittiotatemono_nobetokomenseki");
@@ -188,6 +187,10 @@ public class FillTemplateDemoService extends FillTemplateFactory {
         shortKeys.put("M007-01_KEY3", "jusetsu.jtm.jisha_shutaru_jimusho_shozaichi");
         shortKeys.put("M007-01_KEY4", "jusetsu.jtm.jisha_shogo");
         shortKeys.put("M007-01_KEY4", "jusetsu.jtm.jisha_shogo");
+
+        shortKeys.put("M007-02_KEY13", "jusetsu.jes.tatemono_yukamenseki_gokei");
+        shortKeys.put("M005-03_KEY3", "baikei.bpm.zandaikin_nengappi");
+
 
 
     }

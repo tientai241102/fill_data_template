@@ -15,12 +15,10 @@ import static java.util.stream.Collectors.groupingBy;
 public class ObjectFormatUtils {
     private static final ObjectMapper mapper = new ObjectMapper();
 
-    public static String formatListToString(List<?> list, String type, Map<String, String[][]> tableData,String prefix) {
+    public static String formatListToString(List<?> list, String type, Map<String, String[][]> tableData,String prefix, Map<String, String> mapAll) {
         StringBuilder sb = new StringBuilder();
-        String spec = handleDataArraySpec(list, type);
-        if (!spec.isEmpty()) {
-            return spec;
-        }
+         handleDataArraySpec(list, type,mapAll);
+
 
 
         for (int i = 0; i < list.size(); i++) {
@@ -165,23 +163,24 @@ public class ObjectFormatUtils {
         }
     }
 
-    private static String handleDataArraySpec(List<?> list, String type){
-        StringBuilder sb = new StringBuilder();
+    private static void handleDataArraySpec(List<?> list, String type, Map<String, String> mapAll) {
+
         switch (type) {
             case "tochi":
-                String keyGroupBy="shozai";
-                groupByDataArraySpec(list, type, sb,keyGroupBy, map -> safe(map.get("chibanmae")) + " 番 " + safe(map.get("chibanato")));
-                return sb.toString();
+                mapAll.put( "M007-02_ARRAY_KEY1", groupByDataArraySpecGroupBy(list, "shozai", map -> safe(map.get("chibanmae")) + "番" + safe(map.get("chibanato"))));
+                mapAll.put( "M007-02_ARRAY_KEY2", groupByDataArraySpec(list,  map -> safe(map.get("chibanmae")) + "番" + safe(map.get("chibanato"))));
+                return ;
 
             // Add more cases as needed
             default:
-              return "";
+
         }
 
 
     }
 
-    private static void groupByDataArraySpec(List<?> list, String type, StringBuilder sb, String keyGroupBy, Function<Map, String> handleDataArraySpec) {
+    private static String groupByDataArraySpecGroupBy(List<?> list, String keyGroupBy, Function<Map, String> handleDataArraySpec) {
+        StringBuilder sb = new StringBuilder();
         list.stream()
                 .collect(Collectors.groupingBy(o -> {
                     Map<String, Object> map = mapper.convertValue(o, Map.class);
@@ -195,10 +194,18 @@ public class ObjectFormatUtils {
                                 Map<String, Object> map = mapper.convertValue(item, Map.class);
                                 return handleDataArraySpec.apply(map);
                             })
-                            .collect(Collectors.joining(", ")); // ngăn cách bằng dấu phẩy
+                            .collect(Collectors.joining("、")); // ngăn cách bằng dấu phẩy
 
                     sb.append(" ").append(joined).append("\n");
                 });
+        return sb.toString();
+    }
+
+    private static String groupByDataArraySpec(List<?> list, Function<Map, String> handleDataArraySpec) {
+        return list.stream().map(value -> {
+            Map<String, Object> map = mapper.convertValue(value, Map.class);
+            return handleDataArraySpec.apply(map);
+        }).collect(Collectors.joining("、"));
     }
 
 
