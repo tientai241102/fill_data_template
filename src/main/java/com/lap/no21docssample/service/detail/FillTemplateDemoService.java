@@ -4,16 +4,20 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lap.no21docssample.service.FillTemplateFactory;
 import com.lap.no21docssample.utils.ConstantUtils;
 import jakarta.annotation.PostConstruct;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 @Service
 public class FillTemplateDemoService extends FillTemplateFactory {
@@ -34,6 +38,8 @@ public class FillTemplateDemoService extends FillTemplateFactory {
         objectWithDataType.put("yushiriyo_naiyo3_yushishonin_shutokukijitsu", ConstantUtils.DATE);
         objectWithDataType.put("yushiriyo_naiyo2_yushishonin_shutokukijitsu", ConstantUtils.DATE);
         objectWithDataType.put("yushiriyo_naiyo1_yushishonin_shutokukijitsu", ConstantUtils.DATE);
+        objectWithDataType.put("baikei.bpm.zandaikin_nengappi", ConstantUtils.DATE);
+        objectWithDataType.put("baikei.bsc.honkeiyaku_tekisetsu_nengappi", ConstantUtils.DATE);
 
 
 
@@ -147,49 +153,30 @@ public class FillTemplateDemoService extends FillTemplateFactory {
 
         // --------------------- SHORT KEY OBJECT WITH LABEL ---------------------
 
-        shortKeys.put("M007-02_KEY10", "jusetsu.jes.tochi1_gokeimenseki");
-        shortKeys.put("M007-02_KEY11", "jusetsu.jes.shakuchitaisho_menseki");
-        shortKeys.put("M007-02_KEY12", "jusetsu.jes.ittiotatemono_nobetokomenseki");
-        shortKeys.put("M007-09_KEY2", "jusetsu.jrb.baibaidaikin");
-        shortKeys.put("M007-01_KEY4", "jusetsu.jtm.jisha_shogo");
-        shortKeys.put("M007-02_KEY8", "jusetsu.jes.ittiotatemono_shozai");
-        shortKeys.put("M007-02_KEY3", "jusetsu.jes.ittiotatemono_chibanmae");
-        shortKeys.put("M007-02_KEY4", "jusetsu.jes.ittiotatemono_chibanato");
-        shortKeys.put("M007-02_KEY9", "jusetsu.jes.tatemonomeisho");
-        shortKeys.put("M007-02_KEY10", "jusetsu.jes.senyububun_meisho");
-        shortKeys.put("M007-09_KEY2", "jusetsu.jrb.baibaidaikin");
         shortKeys.put("M007-01_KEY1", "jusetsu.jtm.jisha_shogo");
         shortKeys.put("M007-01_KEY2", "jusetsu.jtm.tatakkengyoshajoho[0].shogo");
-        shortKeys.put("M005-03_KEY1", "baikei.bpm.hikiwatashibi_sentaku");
-        shortKeys.put("M005-03_KEY2", "baikei.bpm.hikiwatashibi2_nyuryoku");
-        shortKeys.put("M005-03_KEY3", "baikei.bsc.honkeiyaku_tekisetsu_nengappi");
+        shortKeys.put("M005-02_KEY3", "baikei.bpm.zandaikin_nengappi");
+        shortKeys.put("M005-03_KEY1", "baikei.bsc.honkeiyaku_tekisetsu_nengappi");
         shortKeys.put("M007-02_KEY1", "jusetsu.jes.jukyo_hyoji");
         shortKeys.put("M007-02_KEY2", "jusetsu.jes.tatemono_jushohyoji");
         shortKeys.put("M007-02_KEY3", "jusetsu.jes.ittiotatemono_chibanmae");
         shortKeys.put("M007-02_KEY4", "jusetsu.jes.ittiotatemono_chibanato");
-        shortKeys.put("M007-02_KEY5", "jusetsu.jes.tochi1[0].chibanmae");
-        shortKeys.put("M007-02_KEY6", "jusetsu.jes.tochi1[0].chibanato");
         shortKeys.put("M007-09_KEY1", "jusetsu.jrb.kingaku1");
-        shortKeys.put("M007-02_KEY7", "jusetsu.jes.tochi1[0].shozai");
-        shortKeys.put("M007-02_KEY5", "jusetsu.jes.tochi1[0].chibanmae");
-        shortKeys.put("M007-02_KEY6", "jusetsu.jes.tochi1[0].chibanato");
         shortKeys.put("M007-02_KEY8", "jusetsu.jes.ittiotatemono_shozai");
-        shortKeys.put("M007-02_KEY3", "jusetsu.jes.ittiotatemono_chibanmae");
-        shortKeys.put("M007-02_KEY4", "jusetsu.jes.ittiotatemono_chibanato");
-        shortKeys.put("M007-02_KEY9", "jusetsu.jes.tatemonomeisho");
-        shortKeys.put("M007-02_KEY7", "jusetsu.jes.tochi1[0].shozai");
-        shortKeys.put("M007-02_KEY5", "jusetsu.jes.tochi1[0].chibanmae");
-        shortKeys.put("M007-02_KEY6", "jusetsu.jes.tochi1[0].chibanato");
-        shortKeys.put("M007-02_KEY8", "jusetsu.jes.ittiotatemono_shozai");
-        shortKeys.put("M007-02_KEY3", "jusetsu.jes.ittiotatemono_chibanmae");
-        shortKeys.put("M007-02_KEY4", "jusetsu.jes.ittiotatemono_chibanato");
         shortKeys.put("M007-02_KEY9", "jusetsu.jes.tatemonomeisho");
         shortKeys.put("M007-01_KEY3", "jusetsu.jtm.jisha_shutaru_jimusho_shozaichi");
         shortKeys.put("M007-01_KEY4", "jusetsu.jtm.jisha_shogo");
-        shortKeys.put("M007-01_KEY4", "jusetsu.jtm.jisha_shogo");
-
+        shortKeys.put("M007-02_KEY10", "jusetsu.jes.tochi1_gokeimenseki");
         shortKeys.put("M007-02_KEY13", "jusetsu.jes.tatemono_yukamenseki_gokei");
-        shortKeys.put("M005-03_KEY3", "baikei.bpm.zandaikin_nengappi");
+        shortKeys.put("M007-09_KEY2", "jusetsu.jrb.baibaidaikin");
+        shortKeys.put("M007-02_KEY14", "jusetsu.jes.senyububun_meisho");
+        shortKeys.put("M005-02_KEY1", "baikei.bpm.hikiwatashibi_sentaku");
+        shortKeys.put("M005-02_KEY2", "baikei.bpm.hikiwatashibi2_nyuryoku");
+        shortKeys.put("M007-02_KEY7", "jusetsu.jes.tochi1[0].shozai");
+        shortKeys.put("M007-02_KEY5", "jusetsu.jes.tochi1[0].chibanmae");
+        shortKeys.put("M007-02_KEY6", "jusetsu.jes.tochi1[0].chibanato");
+        shortKeys.put("M007-02_KEY11", "jusetsu.jes.shakuchitaisho_menseki");
+        shortKeys.put("M007-02_KEY12", "jusetsu.jes.ittiotatemono_nobetokomenseki");
 
 
 
@@ -222,15 +209,37 @@ public class FillTemplateDemoService extends FillTemplateFactory {
 
             Map<String, Object> data = loadData();
             try (InputStream templateStream = file.getInputStream()) {
+                byte[] fileData = templateStream.readAllBytes();
+
+                try (InputStream checkStream = new ByteArrayInputStream(fileData)) {
+                    validateWordFile(checkStream);
+                }
+
                 Map<String, String[][]> tableData = new HashMap<>();
                 Map<String, String> replacements = this.buildReplacementMap(data, objectWithDataType, objectWithLabel, RADIO_BUTTON_OPTIONS, RADIO_BUTTON_REPLACE_DATA,tableData);
 
-                return exportDataToWordFile(templateStream, replacements, objectWithDefaultData,tableData,objectWithLabel,shortKeys);
+                return exportDataToWordFile(new ByteArrayInputStream(fileData), replacements, objectWithDefaultData,tableData,objectWithLabel,shortKeys);
             } catch (IOException e) {
                 e.printStackTrace();
                 throw new IOException("Error loading data from URL: " + e.getMessage());
             }
 
+
+
+    }
+    public static void validateWordFile(InputStream inputStream) throws IOException {
+        try {
+            byte[] data = inputStream.readAllBytes();
+            try (OPCPackage pkg = OPCPackage.open(new ByteArrayInputStream(data))) {
+
+                // Word phải có /word/document.xml
+                if (pkg.getPartsByName(Pattern.compile("/word/document.xml")).isEmpty()) {
+                    throw new IOException("Error loading data from URL: Not a valid Word file");
+                }
+            }
+        } catch (Exception e) {
+            throw new IOException("Error loading data from URL: " + e.getMessage(), e);
+        }
     }
 
 
