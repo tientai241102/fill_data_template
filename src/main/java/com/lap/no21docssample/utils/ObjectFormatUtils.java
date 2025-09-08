@@ -2,6 +2,8 @@ package com.lap.no21docssample.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.util.ObjectUtils;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -167,7 +169,20 @@ public class ObjectFormatUtils {
 
         switch (type) {
             case "tochi":
-                mapAll.put( "M007-02_ARRAY_KEY1", groupByDataArraySpecGroupBy(list, "shozai", map -> safe(map.get("chibanmae")) + "番" + safe(map.get("chibanato"))));
+                mapAll.put( "M007-02_ARRAY_KEY1",
+                        groupByDataArraySpecGroupBy(list,
+                                "shozai",
+                                map -> {
+                            StringBuilder stringBuilder = new StringBuilder();
+                            if (map.get("chibanmae") != null && !map.get("chibanmae").toString().isEmpty()) {
+                                stringBuilder.append(safe(map.get("chibanmae"))).append("番");
+                            }
+                            if (map.get("chibanato") != null && !map.get("chibanato").toString().isEmpty()) {
+                                stringBuilder.append(safe(map.get("chibanato")));
+                            }
+                            return stringBuilder.toString();
+                        }));
+
                 mapAll.put( "M007-02_ARRAY_KEY2", groupByDataArraySpec(list,  map -> safe(map.get("chibanmae")) + "番" + safe(map.get("chibanato"))));
                 return ;
 
@@ -195,8 +210,10 @@ public class ObjectFormatUtils {
                                 return handleDataArraySpec.apply(map);
                             })
                             .collect(Collectors.joining("、")); // ngăn cách bằng dấu phẩy
-
-                    sb.append(" ").append(joined).append("\n");
+                    if (key != null && !key.isEmpty() && !joined.isEmpty()){
+                      sb.append(" ");
+                    }
+                    sb.append(joined).append("\n");
                 });
         return sb.toString();
     }

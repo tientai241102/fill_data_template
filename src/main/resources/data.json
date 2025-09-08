@@ -31,10 +31,21 @@
       "tochi_gokeimenseki": "1234567890",
       "tochi": [
         {
-          "chibanmae": "地番まえ",
-          "shozai": "重説 不動産の表示土地_所在と地番",
+          "chibanmae": "",
+          "shozai": "shozai1",
           "mochibun1": "1",
-          "chibanato": "地番あと",
+          "chibanato": "",
+          "mochibun2": "1",
+          "chiseki": "1",
+          "chimoku1": "",
+          "kanma": false,
+          "chimoku2": "1"
+        },
+        {
+          "chibanmae": "chibanmae2",
+          "shozai": "",
+          "mochibun1": "1",
+          "chibanato": "chibanato2",
           "mochibun2": "1",
           "chiseki": "1",
           "chimoku1": "",
