@@ -3,7 +3,10 @@ package com.lap.no21docssample.utils;
 
 import org.apache.poi.xwpf.usermodel.*;
 import org.apache.xmlbeans.XmlCursor;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPPr;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTRPr;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,12 +17,12 @@ import java.util.regex.Pattern;
 
 public class ReplaceTextUtils {
 
-    public static void replacePlaceholdersInParagraph(XWPFDocument document,XWPFParagraph para, Map<String, String> replacements, Pattern pattern, Map<String, String> objectWithDefaultData,  Map<String, String[][]> tableData, Map<String, String> objectWithLabel, Map<String, String> shortKeys) {
+    public static void replacePlaceholdersInParagraph(XWPFDocument document, XWPFParagraph para, Map<String, String> replacements, Pattern pattern, Map<String, String> objectWithDefaultData, Map<String, String[][]> tableData, Map<String, String> objectWithLabel, Map<String, String> shortKeys) {
         List<XWPFRun> paragraphRuns = new ArrayList<>(para.getRuns());
         if (paragraphRuns.isEmpty()) return;
         // Ghép toàn bộ text của các run lại
         StringBuilder concatenatedText = new StringBuilder();
-        Map<Integer,int[]> runWithPositionsOldAndNew = new HashMap<>();
+        Map<Integer, int[]> runWithPositionsOldAndNew = new HashMap<>();
         int runCount = paragraphRuns.size();
         int[] runEndIndices = new int[runCount];
         for (int i = 0; i < runCount; i++) {
@@ -72,11 +75,11 @@ public class ReplaceTextUtils {
             String suffixInEndRun = endRunText.substring(Math.max(0, endChar - endRunStartPos));
 
             if (endRunIdx == startRunIdx) {
-                if ( newTextByRunIndex[startRunIdx] != null){
+                if (newTextByRunIndex[startRunIdx] != null) {
                     int[] oldAndNewPos = runWithPositionsOldAndNew.get(startRunIdx);
 
-                    newTextByRunIndex[startRunIdx] =  newTextByRunIndex[startRunIdx].substring(0,oldAndNewPos[1]) + prefixInStartRun.substring(oldAndNewPos[0])+  replacement + suffixInEndRun;
-                }else {
+                    newTextByRunIndex[startRunIdx] = newTextByRunIndex[startRunIdx].substring(0, oldAndNewPos[1]) + prefixInStartRun.substring(oldAndNewPos[0]) + replacement + suffixInEndRun;
+                } else {
                     String startRunTextReplace = prefixInStartRun + replacement;
                     runWithPositionsOldAndNew.put(startRunIdx, new int[]{Math.max(0, endChar - endRunStartPos), startRunTextReplace.length()});
                     // Placeholder trong một run
@@ -85,11 +88,11 @@ public class ReplaceTextUtils {
 
             } else {
                 // Ghi replacement vào run bắt đầu, giữ CTRPr của run bắt đầu
-                if ( newTextByRunIndex[startRunIdx] != null){
+                if (newTextByRunIndex[startRunIdx] != null) {
                     int[] oldAndNewPos = runWithPositionsOldAndNew.get(startRunIdx);
 
-                    newTextByRunIndex[startRunIdx] =  prefixInStartRun.substring(oldAndNewPos[0])+  replacement ;
-                }else {
+                    newTextByRunIndex[startRunIdx] = prefixInStartRun.substring(oldAndNewPos[0]) + replacement;
+                } else {
                     newTextByRunIndex[startRunIdx] = prefixInStartRun + replacement;
                 }
                 // Xóa nội dung các run ở giữa
@@ -110,21 +113,106 @@ public class ReplaceTextUtils {
             }
         }
 
+       // Trong hàm xử lý (ví dụ replacePlaceholdersInParagraph)
+//        for (int i = 0; i < runCount; i++) {
+//            String replacement = newTextByRunIndex[i];
+//            if (replacement == null) replacement = "";
+//            String[] lines = replacement.split("\\\\n|\\n");
+//            for (int j = 0; j < lines.length; j++) {
+//                if (j > 0) paragraphRuns.get(i).addBreak();
+//                paragraphRuns.get(i).setText(lines[j], j == 0 ? 0 : -1);
+//            }
+//        }
         for (int i = 0; i < paragraphRuns.size(); i++) {
-            // Nếu replacement có nhiều dòng thì addBreak
             String replacement = newTextByRunIndex[i];
             if (replacement == null) replacement = "";
             String[] lines = replacement.split("\\\\n|\\n");
-            for (int j = 0; j < lines.length; j++) {
-                if (j > 0) paragraphRuns.get(i).addBreak();
-                paragraphRuns.get(i).setText(lines[j], j == 0 ? 0 : -1);
-            }
+            if (lines.length == 0) lines = new String[]{""};
 
+            XWPFRun baseRun = paragraphRuns.get(i);
+
+            XWPFDocument doc = para.getDocument();
+
+            // 1) Dòng đầu: thay trực tiếp trong run gốc
+            baseRun.setText(lines[0], 0);
+
+            // Nếu paragraph có numbering thì ghi nhận để copy cho các paragraph mới
+            BigInteger numId = para.getNumID();
+            BigInteger ilvl  = para.getNumIlvl();
+
+            // 2) Các dòng còn lại: mỗi dòng = 1 paragraph mới, chèn đúng "sau" para hiện tại
+            for (int j = 1; j < lines.length; j++) {
+                XWPFParagraph newPara = insertParagraphAfter(para, doc);
+
+                // defensive null-check (shouldn't happen thanks to fallback)
+                if (newPara == null) {
+                    throw new IllegalStateException("Cannot create new paragraph after the current paragraph.");
+                }
+
+                // Copy paragraph properties (indent/spacing/numPr…)
+                if (para.getCTP().isSetPPr()) {
+                    CTPPr src = para.getCTP().getPPr();
+                    CTPPr dst = newPara.getCTP().isSetPPr() ? newPara.getCTP().getPPr() : newPara.getCTP().addNewPPr();
+                    dst.set(src);
+                }
+
+                // Nếu đang ở list/bullets, giữ nguyên numId/ilvl
+                if (numId != null) {
+                    newPara.setNumID(numId);
+                    if (ilvl != null) newPara.setNumILvl(ilvl);
+                }
+
+                // Copy run style
+                XWPFRun newRun = newPara.createRun();
+                if (baseRun.getCTR().isSetRPr()) {
+                    CTRPr srcR = baseRun.getCTR().getRPr();
+                    CTRPr dstR = newRun.getCTR().isSetRPr() ? newRun.getCTR().getRPr() : newRun.getCTR().addNewRPr();
+                    dstR.set(srcR);
+                }
+                newRun.setText(lines[j]);
+
+                // Cập nhật "para" để lần chèn sau sẽ nằm đúng ngay sau paragraph mới này
+                para = newPara;
+            }
         }
+
+
+
+    }
+    private static XWPFParagraph insertParagraphAfter(XWPFParagraph para, XWPFDocument doc) {
+        XmlCursor cursor = para.getCTP().newCursor();
+        XWPFParagraph newPara = null;
+        try {
+            cursor.toEndToken();
+            cursor.toNextToken(); // move cursor *after* the paragraph node
+            IBody body = para.getBody();
+            if (body instanceof XWPFTableCell) {
+                XWPFTableCell cell = (XWPFTableCell) body;
+                // insert inside the same cell
+                newPara = cell.insertNewParagraph(cursor); // may return null sometimes
+            } else {
+                // insert into document body
+                newPara = doc.insertNewParagraph(cursor); // may return null sometimes
+            }
+        } finally {
+            cursor.dispose();
+        }
+
+        // fallback if insertNewParagraph returned null for any reason
+        if (newPara == null) {
+            IBody body = para.getBody();
+            if (body instanceof XWPFTableCell) {
+                newPara = ((XWPFTableCell) body).addParagraph(); // append to cell
+            } else {
+                newPara = doc.createParagraph(); // append to document end (fallback)
+            }
+        }
+        return newPara;
     }
 
     private static String getReplacementForKey(String key, Map<String, String> replacements, Map<String, String> objectWithDefaultData,  Map<String, String> objectWithLabel, Map<String, String> shortKeys) {
         boolean isKeyWithLabel = objectWithLabel.containsKey(key);
+        String specialData = "";
         String extractedLabelKey = key ;
         if (isKeyWithLabel) {
             extractedLabelKey = key.contains(":") ? key.substring(key.lastIndexOf(':') + 1) : key;
@@ -132,6 +220,9 @@ public class ReplaceTextUtils {
         }
         boolean isKeyWithShortKey = shortKeys.containsKey(extractedLabelKey);
         if (isKeyWithShortKey) {
+            if (ConstantUtils.SPECIAL_KEY_LIST.contains(extractedLabelKey)){
+                specialData = ConstantUtils.SPECIAL_DATA;
+            }
             extractedLabelKey = shortKeys.get(extractedLabelKey);
         }
         String replacement = replacements.get(extractedLabelKey);
@@ -141,6 +232,9 @@ public class ReplaceTextUtils {
         }
         if (isKeyWithLabel){
             replacement = String.format(key, replacement);
+        }
+        if (ConstantUtils.SPECIAL_KEY_LIST.contains(extractedLabelKey) && replacement !=null && !replacement.isEmpty()){
+            return replacement.concat(specialData);
         }
         return replacement;
     }
@@ -196,7 +290,8 @@ public class ReplaceTextUtils {
     public static void replacePlaceholdersInTable(XWPFDocument document,XWPFTable table, Map<String, String> replacements, Pattern pattern, Map<String, String> objectWithDefaultData,  Map<String, String[][]> tableData, Map<String, String> objectWithLabel, Map<String, String> shortKeys) {
         for (XWPFTableRow row : table.getRows()) {
             for (XWPFTableCell cell : row.getTableCells()) {
-                for (XWPFParagraph para : cell.getParagraphs()) {
+                List<XWPFParagraph> paragraphsToProcess = new ArrayList<>(cell.getParagraphs());
+                for (XWPFParagraph para : paragraphsToProcess) {
                     replacePlaceholdersInParagraph(document,para, replacements, pattern, objectWithDefaultData,tableData, objectWithLabel, shortKeys);
                 }
             }

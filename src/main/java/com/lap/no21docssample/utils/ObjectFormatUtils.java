@@ -5,10 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -167,24 +164,49 @@ public class ObjectFormatUtils {
 
     private static void handleDataArraySpec(List<?> list, String type, Map<String, String> mapAll) {
 
+        Function<Map, String> handleDataArraySpec =   map -> {
+            StringBuilder stringBuilder = new StringBuilder();
+            if (map.get("chibanmae") != null && !map.get("chibanmae").toString().isEmpty()) {
+                stringBuilder.append(safe(map.get("chibanmae"))).append("番");
+            }
+            if (map.get("chibanato") != null && !map.get("chibanato").toString().isEmpty()) {
+                stringBuilder.append(safe(map.get("chibanato")));
+            }
+            return stringBuilder.toString();
+        };
         switch (type) {
             case "tochi":
-                mapAll.put( "M007-02_ARRAY_KEY1",
-                        groupByDataArraySpecGroupBy(list,
-                                "shozai",
-                                map -> {
-                            StringBuilder stringBuilder = new StringBuilder();
-                            if (map.get("chibanmae") != null && !map.get("chibanmae").toString().isEmpty()) {
-                                stringBuilder.append(safe(map.get("chibanmae"))).append("番");
-                            }
-                            if (map.get("chibanato") != null && !map.get("chibanato").toString().isEmpty()) {
-                                stringBuilder.append(safe(map.get("chibanato")));
-                            }
-                            return stringBuilder.toString();
-                        }));
+                List<?>  newList = new ArrayList<>(list);
 
-                mapAll.put( "M007-02_ARRAY_KEY2", groupByDataArraySpec(list,  map -> safe(map.get("chibanmae")) + "番" + safe(map.get("chibanato"))));
-                return ;
+                mapAll.put(
+                        "M007-02_ARRAY_KEY1",
+                        groupByDataArraySpecGroupBy(
+                                newList.stream().filter(o -> {
+                                    Map<String, Object> map = mapper.convertValue(o, Map.class);
+                                    return map.get("shozai") != null && !map.get("shozai").toString().isEmpty()
+                                            || map.get("chibanmae") != null && !map.get("chibanmae").toString().isEmpty()
+                                            ||  map.get("chibanato") != null && !map.get("chibanato").toString().isEmpty();
+                                }).sorted((o1, o2) -> {
+                                            Map<String, Object> map1 = mapper.convertValue(o1, Map.class);
+                                            Map<String, Object> map2 = mapper.convertValue(o2, Map.class);
+
+                                            boolean hasShozai1 = map1.get("shozai") != null && !map1.get("shozai").toString().isEmpty();
+                                            boolean hasShozai2 = map2.get("shozai") != null && !map2.get("shozai").toString().isEmpty();
+
+                                            // true < false => có shozai đứng trước
+                                            return Boolean.compare(!hasShozai1, !hasShozai2);
+                                        }).collect(Collectors.toList()),
+                                "shozai",
+                                handleDataArraySpec));
+                mapAll.put(
+                        "M007-02_ARRAY_KEY2",
+                        groupByDataArraySpec(
+                                newList.stream().filter(o -> {
+                                    Map<String, Object> map = mapper.convertValue(o, Map.class);
+                                    return map.get("chibanmae") != null && !map.get("chibanmae").toString().isEmpty()
+                                            ||  map.get("chibanato") != null && !map.get("chibanato").toString().isEmpty();
+                                }).collect(Collectors.toList()), handleDataArraySpec));
+                return;
 
             // Add more cases as needed
             default:
@@ -200,7 +222,7 @@ public class ObjectFormatUtils {
                 .collect(Collectors.groupingBy(o -> {
                     Map<String, Object> map = mapper.convertValue(o, Map.class);
                     return safe(map.get(keyGroupBy));
-                }))
+                }, LinkedHashMap::new, Collectors.toList()))
                 .forEach((key, value) -> {
                     sb.append(key);
 

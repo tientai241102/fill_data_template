@@ -10,7 +10,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
@@ -82,10 +84,14 @@ public abstract class FillTemplateFactory {
         // Tìm và thay thế tất cả placeholder trong tài liệu
         XWPFDocument doc = new XWPFDocument(templateStream);
         Pattern pattern = Pattern.compile("\\{\\{(.*?)\\}\\}");
-        for (XWPFParagraph para : doc.getParagraphs()) {
+
+        // Thu thập list copy trước khi xử lý
+        List<XWPFParagraph> paragraphsToProcess = new ArrayList<>(doc.getParagraphs());
+        for (XWPFParagraph para : paragraphsToProcess) {
             replacePlaceholdersInParagraph(doc,para, replacements, pattern, objectWithDefaultData,tableData, objectWithLabel, shortKeys);
         }
-        for (XWPFTable table : doc.getTables()) {
+        List<XWPFTable> paragraphsTableToProcess = new ArrayList<>(doc.getTables());
+        for (XWPFTable table : paragraphsTableToProcess) {
             replacePlaceholdersInTable(doc,table, replacements, pattern, objectWithDefaultData,tableData, objectWithLabel, shortKeys);
         }
 
