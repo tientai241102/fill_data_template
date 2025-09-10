@@ -137,8 +137,8 @@ public class FormatUtil {
     return date.format(formatter);
   }
 
-  public static Object japaneseDateFormat(Object date, Object valueOfCheckbox) {
-    return createJapaneseDateFormatWithDefault(date, valueOfCheckbox, "年　 月 　日");
+  public  Object japaneseDateFormat(Object date, Object valueOfCheckbox) {
+    return this.createJapaneseDateFormatWithDefault(date, valueOfCheckbox, "年　 月 　日");
   }
 
   public  Object japaneseDateFormat(Object date, Object valueOfCheckbox, String defaultValue) {
@@ -156,7 +156,7 @@ public class FormatUtil {
     return this.createJapaneseDateFormatWithDefault(date, valueOfCheckbox, "");
   }
 
-  public static Object createJapaneseDateFormatWithDefault(
+  public  Object createJapaneseDateFormatWithDefault(
       Object date, Object valueOfCheckbox, String defaultResult) {
     if (ObjectUtils.isEmpty(date)) {
       return defaultResult;
