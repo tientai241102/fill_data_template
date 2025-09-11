@@ -39,32 +39,32 @@
       ],
       "tochi": [
         {
-          "chibanmae": "地番前０１",
-          "shozai": "所在０１",
-          "chibanato": "地番後０１",
+          "chibanmae": "",
+          "shozai": "",
+          "chibanato": "",
           "chimoku1": "",
           "kanma": false,
           "chimoku2": ""
         },
         {
-          "chibanmae": "地番前０２",
-          "shozai": "所在０2",
-          "chibanato": "地番後０２",
+          "chibanmae": "",
+          "shozai": "",
+          "chibanato": "",
           "chimoku1": "",
           "kanma": false,
           "chimoku2": ""
         }, {
-          "chibanmae": "地番前０3",
-          "shozai": "所在０3",
-          "chibanato": "地番後０3",
+          "chibanmae": "",
+          "shozai": "",
+          "chibanato": "",
           "chimoku1": "",
           "kanma": false,
           "chimoku2": ""
         },
         {
-          "chibanmae": "地番前０4",
-          "shozai": "所在０4",
-          "chibanato": "地番後０4",
+          "chibanmae": "",
+          "shozai": "",
+          "chibanato": "",
           "chimoku1": "",
           "kanma": false,
           "chimoku2": ""
@@ -355,6 +355,11 @@
     "jes": {
       "tochi1_biko_matsubi_ikayohaku_hyoji": true,
       "tochi1_biko_numbering": true,
+      "ittiotatemono_shozai": "ittiotatemono_shozai",
+      "ittiotatemono_chibanmae": "",
+      "ittiotatemono_chibanato": "",
+      "tatemono_kenchikujikiu": "2017-07-11",
+      "tatemono_kenchikujikiu_checkbox": true,
       "tochi1": [
         {
           "chibanmae": "地番前０１",

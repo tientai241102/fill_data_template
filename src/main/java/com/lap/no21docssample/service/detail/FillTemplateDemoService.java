@@ -27,20 +27,93 @@ public class FillTemplateDemoService extends FillTemplateFactory {
     Map<String, String> objectWithDefaultData = new HashMap<>();
     Map<String, String> objectWithLabel = new HashMap<>();
     Map<String, String> shortKeys = new HashMap<>();
+    Map<String, String> dateWithCheckBox = new HashMap<>();
+    Map<String, String> dateMonthYearWithCheckBox = new HashMap<>();
 
     @PostConstruct
     public void init() {
-        // --- Declare variables Date ---
-        objectWithDataType.put("naikin1_nengappi", ConstantUtils.DATE);
-        objectWithDataType.put("naikin2_nengappi", ConstantUtils.DATE);
-        objectWithDataType.put("zandaikin_nengappi", ConstantUtils.DATE);
-        objectWithDataType.put("honkeiyaku_tekisetsu_nengappi", ConstantUtils.DATE);
-        objectWithDataType.put("yushiriyo_naiyo3_yushishonin_shutokukijitsu", ConstantUtils.DATE);
-        objectWithDataType.put("yushiriyo_naiyo2_yushishonin_shutokukijitsu", ConstantUtils.DATE);
-        objectWithDataType.put("yushiriyo_naiyo1_yushishonin_shutokukijitsu", ConstantUtils.DATE);
-        objectWithDataType.put("baikei.bpm.zandaikin_nengappi", ConstantUtils.DATE);
-        objectWithDataType.put("baikei.bsc.honkeiyaku_tekisetsu_nengappi", ConstantUtils.DATE);
+        // --------------------- DATE AND CHECKBOX ---------------------
 
+
+        dateWithCheckBox.put("baikei.bpm.zandaikin_nengappi", "baikei.bpm.zandaikin_nengappi_checkbox");
+        dateWithCheckBox.put("baikei.bsc.honkeiyaku_tekisetsu_nengappi", "baikei.bsc.honkeiyaku_tekisetsu_nengappi_checkbox");
+        dateWithCheckBox.put("baikei.bes.kigen_nengappi", "baikei.bes.kigen_nengappi_checkbox");
+        dateWithCheckBox.put("baikei.bes.shuruigashakuchiken_kigen", "baikei.bes.shuruigashakuchiken_kigen_checkbox");
+        dateWithCheckBox.put("baikei.bes.teikishakuchiken_setteikeiyakusho", "baikei.bes.teikishakuchiken_setteikeiyakusho_checkbox");
+        dateWithCheckBox.put("baikei.bes.teikishakuchiken_kakuningoisho", "baikei.bes.teikishakuchiken_kakuningoisho_checkbox");
+        dateWithCheckBox.put("baikei.bes.teikishakuteiken_jotokeiyakusho", "baikei.bes.teikishakuteiken_jotokeiyakusho_checkbox");
+        dateWithCheckBox.put("baikei.bes.teikishakuchiken_koseishosho", "baikei.bes.teikishakuchiken_koseishosho_checkbox");
+        dateWithCheckBox.put("baikei.bes.teikishakuteiken_kakuninbi", "baikei.bes.teikishakuteiken_kakuninbi_checkbox");
+        dateWithCheckBox.put("baikei.bes.teikishakuteiken_kigeni", "baikei.bes.teikishakuteiken_kigen_checkbox");
+
+        dateWithCheckBox.put("baikei.bpm.naikin1_nengappi", "baikei.bpm.naikin1_nengappi_checkbox");
+        dateWithCheckBox.put("baikei.bpm.naikin2_nengappi", "baikei.bpm.naikin2_nengappi_checkbox");
+        dateWithCheckBox.put("baikei.bpm.yushiriyo_naiyo1_yushishonin_shutokukijitsu", "baikei.bpm.yushiriyo_naiyo1_yushishonin_shutokukijitsu_checkbox");
+        dateWithCheckBox.put("baikei.bpm.yushiriyo_naiyo2_yushishonin_shutokukijitsu", "baikei.bpm.yushiriyo_naiyo2_yushishonin_shutokukijitsu_checkbox");
+        dateWithCheckBox.put("baikei.bpm.yushiriyo_naiyo3_yushishonin_shutokukijitsu", "baikei.bpm.yushiriyo_naiyo3_yushishonin_shutokukijitsu_checkbox");
+
+        dateWithCheckBox.put("jusetsu.jtm.setsumeishojyuryo_nengappi", "jusetsu.jtm.setsumeishojyuryo_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jtm.jisha_menkyo_nengappi", "jusetsu.jtm.jisha_menkyo_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jtm.urinushi_gyosha_menkyo_nengappi", "jusetsu.jtm.urinushi_gyosha_menkyo_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jtm.tatakkengyoshajoho[0].menkyo_nengappi", "jusetsu.jtm.tatakkengyoshajoho[0].menkyo_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jtm.tatakkengyoshajoho[1].menkyo_nengappi", "jusetsu.jtm.tatakkengyoshajoho[1].menkyo_nengappi_checkbox");
+
+        dateWithCheckBox.put("jusetsu.jes.sokuryozumen_hakkobi", "jusetsu.jes.sokuryozumen_hakkobi_checkbox");
+
+        dateWithCheckBox.put("jusetsu.jrb.tokijiko_taisho1_shomeinengappi", "jusetsu.jrb.tokijiko_taisho1_shomeinengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.tokijiko_taisho2_shomeinengappi", "jusetsu.jrb.tokijiko_taisho2_shomeinengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.kizontakuchi_bango_nengappi", "jusetsu.jrb.kizontakuchi_bango_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.kyoka_bango_nengappi", "jusetsu.jrb.kyoka_bango_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.kensa_bango_nengappi", "jusetsu.jrb.kensa_bango_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.kokoku_bango_nengappi", "jusetsu.jrb.kokoku_bango_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.doroichishitei_nengappi", "jusetsu.jrb.doroichishitei_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.karikanchishitei_nengappi", "jusetsu.jrb.karikanchishitei_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.kanchishobun_kokoku", "jusetsu.jrb.kanchishobun_kokoku_checkbox");
+
+        dateWithCheckBox.put("jusetsu.jrb.denki2_kanonashisetsu_ikkatsujuden_keiyakukikan", "jusetsu.jrb.denki2_kanonashisetsu_ikkatsujuden_keiyakukikan_checkbox");
+
+        dateWithCheckBox.put("jusetsu.jrb.kensazumisho_nengappi", "jusetsu.jrb.kensazumisho_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.kakuninzumisho_nengappi", "jusetsu.jrb.kakuninzumisho_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.kanrihi_taino_johokaiji_taino_nengappi", "jusetsu.jrb.kanrihi_taino_johokaiji_taino_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.kanrihi_taino_nengappi", "jusetsu.jrb.kanrihi_taino_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.kanrihi_nengappi", "jusetsu.jrb.kanrihi_nengappi_checkbox");
+
+        dateWithCheckBox.put("jusetsu.jrb.shuzentsumitatekin_tsumitategaku_nengappi2", "jusetsu.jrb.shuzentsumitatekin_tsumitategaku_nengappi2_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.shuzentsumitatekin_tsumitategaku_nengappi", "jusetsu.jrb.shuzentsumitatekin_tsumitategaku_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.shuzentsumitatekin_taino_nengappi", "jusetsu.jrb.shuzentsumitatekin_taino_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.shuzentsumitatekin_shuzen_tsumitatekin_nengappi", "jusetsu.jrb.shuzentsumitatekin_shuzen_tsumitatekin_nengappi_checkbox");
+
+        dateWithCheckBox.put("jusetsu.jrb.shikichi_shakuchiken_sonzokukikan_nengappi", "jusetsu.jrb.shikichi_shakuchiken_sonzokukikan_nengappi_checkbox");
+
+        dateWithCheckBox.put("jusetsu.jrb.tetsukekaijo_nengappi", "jusetsu.jrb.tetsukekaijo_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.yushiriyo_tokuyaku_kaijo_nengappi", "jusetsu.jrb.yushiriyo_tokuyaku_kaijo_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.jotoshodaku_tokuyaku_kaijo_nengappi", "jusetsu.jrb.jotoshodaku_tokuyaku_kaijo_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.assen1_shodakushonin_shutokukijitsu", "jusetsu.jrb.assen1_shodakushonin_shutokukijitsu_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.assen2_shodakushonin_shutokukijitsu", "jusetsu.jrb.assen2_shodakushonin_shutokukijitsu_checkbox");
+        dateWithCheckBox.put("jusetsu.jrb.assen3_shodakushonin_shutokukijitsu", "jusetsu.jrb.assen3_shodakushonin_shutokukijitsu_checkbox");
+        dateWithCheckBox.put("jusetsu.jle.kikan_kaishi_nengappi", "jusetsu.jle.kikan_kaishi_nengappi_checkbox");
+        dateWithCheckBox.put("jusetsu.jle.kikan_shuryo_nengappi", "jusetsu.jle.kikan_shuryo_nengappi_checkbox");
+        dateWithCheckBox.put("baikei.bpm.taishakukenjotoshodakukeiyaku_kaijokijitsu", "baikei.bpm.taishakukenjotoshodakukeiyaku_kaijokijitsu_checkbox");
+        dateWithCheckBox.put("baikei.bpm.yushikeiyaku_kaijokijitsu", "baikei.bpm.yushikeiyaku_kaijokijitsu_checkbox");
+        dateWithCheckBox.put("baikei.bpm.zandaikin_nengappi", "baikei.bpm.zandaikin_nengappi_checkbox");
+        dateWithCheckBox.put("baikei.bpm.futekigosenkinin_kikankisan_sentaku2_nengappi", "baikei.bpm.futekigosenkinin_kikankisan_sentaku2_nengappi_checkbox");
+        dateWithCheckBox.put("baikei.bpm.tetsukekin_kaijokijitsu", "baikei.bpm.tetsukekin_kaijokijitsu_checkbox");
+
+
+
+        dateMonthYearWithCheckBox.put("jusetsu.jes.tatemono_kenchikujikiu", "jusetsu.jes.tatemono_kenchikujikiu_checkbox");
+        dateMonthYearWithCheckBox.put("jusetsu.jes.tatemono_zokaichikujikan", "jusetsu.jes.tatemono_zokaichikujikan_checkbox");
+        dateMonthYearWithCheckBox.put("jusetsu.jes.tatemono_senyububun_kenchikujiki", "jusetsu.jes.tatemono_senyububun_kenchikujiki_checkbox");
+
+        dateMonthYearWithCheckBox.put("jusetsu.jrb.inyomizu1_seibiyotei_nengetsu", "jusetsu.jrb.inyomizu1_seibiyotei_nengetsu_checkbox");
+        dateMonthYearWithCheckBox.put("jusetsu.jrb.denki1_seibiyotei_nengetsu", "jusetsu.jrb.denki1_seibiyotei_nengetsu_checkbox");
+        dateMonthYearWithCheckBox.put("jusetsu.jrb.gasu1_seibiyotei_nengetsu", "jusetsu.jrb.gasu1_seibiyotei_nengetsu_checkbox");
+        dateMonthYearWithCheckBox.put("jusetsu.jrb.osui1_seibiyotei_nengetsu", "jusetsu.jrb.osui1_seibiyotei_nengetsu_checkbox");
+        dateMonthYearWithCheckBox.put("jusetsu.jrb.zatsuhaisui1_seibiyotei_nengetsu", "jusetsu.jrb.zatsuhaisui1_seibiyotei_nengetsu_checkbox");
+        dateMonthYearWithCheckBox.put("jusetsu.jrb.amamizu1_seibiyotei_nengetsu", "jusetsu.jrb.amamizu1_seibiyotei_nengetsu_checkbox");
+        dateMonthYearWithCheckBox.put("jusetsu.jrb.inyomizu2_seibiyotei_nengetsu", "jusetsu.jrb.inyomizu2_seibiyotei_nengetsu_checkbox");
+        dateMonthYearWithCheckBox.put("jusetsu.jrb.gasu2_seibiyotei_nengetsu", "jusetsu.jrb.gasu2_seibiyotei_nengetsu_checkbox");
+        dateMonthYearWithCheckBox.put("jusetsu.jrb.haisui2_seibiyotei_nengetsu", "jusetsu.jrb.haisui2_seibiyotei_nengetsu_checkbox");
 
 
         // --------------------- CHECKBOX ---------------------
@@ -178,7 +251,80 @@ public class FillTemplateDemoService extends FillTemplateFactory {
         shortKeys.put("M007-02_KEY11", "jusetsu.jes.shakuchitaisho_menseki");
         shortKeys.put("M007-02_KEY12", "jusetsu.jes.ittiotatemono_nobetokomenseki");
 
+        shortKeys.put("M005-01_KEY1", "baikei.bes.kigen_nengappi");
+        shortKeys.put("M005-01_KEY2", "baikei.bes.shuruigashakuchiken_kigen");
+        shortKeys.put("M005-01_KEY3", "baikei.bes.teikishakuchiken_setteikeiyakusho");
+        shortKeys.put("M005-01_KEY4", "baikei.bes.teikishakuchiken_kakuningoisho");
+        shortKeys.put("M005-01_KEY5", "baikei.bes.teikishakuteiken_jotokeiyakusho");
+        shortKeys.put("M005-01_KEY6", "baikei.bes.teikishakuchiken_koseishosho");
+        shortKeys.put("M005-01_KEY7", "baikei.bes.teikishakuteiken_kakuninbi");
+        shortKeys.put("M005-01_KEY8", "baikei.bes.teikishakuteiken_kigeni");
 
+        shortKeys.put("M005-02_KEY4", "baikei.bpm.naikin1_nengappi");
+        shortKeys.put("M005-02_KEY5", "baikei.bpm.naikin2_nengappi");
+        shortKeys.put("M005-02_KEY6", "baikei.bpm.yushiriyo_naiyo1_yushishonin_shutokukijitsu");
+        shortKeys.put("M005-02_KEY7", "baikei.bpm.yushiriyo_naiyo2_yushishonin_shutokukijitsu");
+        shortKeys.put("M005-02_KEY8", "baikei.bpm.yushiriyo_naiyo3_yushishonin_shutokukijitsu");
+
+        shortKeys.put("M007-01_KEY5", "jusetsu.jtm.setsumeishojyuryo_nengappi");
+        shortKeys.put("M007-01_KEY6", "jusetsu.jtm.jisha_menkyo_nengappi");
+        shortKeys.put("M007-01_KEY7", "jusetsu.jtm.urinushi_gyosha_menkyo_nengappi");
+        shortKeys.put("M007-01_KEY8", "jusetsu.jtm.tatakkengyoshajoho[0].menkyo_nengappi");
+        shortKeys.put("M007-01_KEY9", "jusetsu.jtm.tatakkengyoshajoho[1].menkyo_nengappi");
+
+        shortKeys.put("M007-02_KEY15", "jusetsu.jes.sokuryozumen_hakkobi");
+        shortKeys.put("M007-02_KEY16", "jusetsu.jes.tatemono_kenchikujikiu");
+        shortKeys.put("M007-02_KEY17", "jusetsu.jes.tatemono_zokaichikujikan");
+        shortKeys.put("M007-02_KEY18", "jusetsu.jes.tatemono_senyububun_kenchikujiki");
+
+        shortKeys.put("M007-04_KEY1", "jusetsu.jrb.tokijiko_taisho1_shomeinengappi");
+        shortKeys.put("M007-04_KEY2", "jusetsu.jrb.tokijiko_taisho2_shomeinengappi");
+
+        shortKeys.put("M007-05_KEY1", "jusetsu.jrb.kizontakuchi_bango_nengappi");
+        shortKeys.put("M007-05_KEY2", "jusetsu.jrb.kyoka_bango_nengappi");
+        shortKeys.put("M007-05_KEY3", "jusetsu.jrb.kensa_bango_nengappi");
+        shortKeys.put("M007-05_KEY4", "jusetsu.jrb.kokoku_bango_nengappi");
+        shortKeys.put("M007-05_KEY5", "jusetsu.jrb.doroichishitei_nengappi");
+        shortKeys.put("M007-05_KEY6", "jusetsu.jrb.karikanchishitei_nengappi");
+        shortKeys.put("M007-05_KEY7", "jusetsu.jrb.kanchishobun_kokoku");
+
+        shortKeys.put("M007-07_KEY1", "jusetsu.jrb.inyomizu1_seibiyotei_nengetsu");
+        shortKeys.put("M007-07_KEY2", "jusetsu.jrb.denki1_seibiyotei_nengetsu");
+        shortKeys.put("M007-07_KEY3", "jusetsu.jrb.gasu1_seibiyotei_nengetsu");
+        shortKeys.put("M007-07_KEY4", "jusetsu.jrb.osui1_seibiyotei_nengetsu");
+        shortKeys.put("M007-07_KEY5", "jusetsu.jrb.zatsuhaisui1_seibiyotei_nengetsu");
+        shortKeys.put("M007-07_KEY6", "jusetsu.jrb.amamizu1_seibiyotei_nengetsu");
+        shortKeys.put("M007-07_KEY7", "jusetsu.jrb.inyomizu2_seibiyotei_nengetsu");
+        shortKeys.put("M007-07_KEY8", "jusetsu.jrb.gasu2_seibiyotei_nengetsu");
+        shortKeys.put("M007-07_KEY9", "jusetsu.jrb.haisui2_seibiyotei_nengetsu");
+        shortKeys.put("M007-07_KEY10", "jusetsu.jrb.denki2_kanonashisetsu_ikkatsujuden_keiyakukikan");
+
+        shortKeys.put("M007-08_KEY1", "jusetsu.jrb.kensazumisho_nengappi");
+        shortKeys.put("M007-08_KEY2", "jusetsu.jrb.kakuninzumisho_nengappi");
+        shortKeys.put("M007-08_KEY3", "jusetsu.jrb.kanrihi_taino_johokaiji_taino_nengappi");
+        shortKeys.put("M007-08_KEY4", "jusetsu.jrb.kanrihi_taino_nengappi");
+        shortKeys.put("M007-08_KEY5", "jusetsu.jrb.kanrihi_nengappi");
+        shortKeys.put("M007-08_KEY6", "jusetsu.jrb.shuzentsumitatekin_tsumitategaku_nengappi2");
+        shortKeys.put("M007-08_KEY7", "jusetsu.jrb.shuzentsumitatekin_tsumitategaku_nengappi");
+        shortKeys.put("M007-08_KEY8", "jusetsu.jrb.shuzentsumitatekin_taino_nengappi");
+        shortKeys.put("M007-08_KEY9", "jusetsu.jrb.shuzentsumitatekin_shuzen_tsumitatekin_nengappi");
+        shortKeys.put("M007-08_KEY10", "jusetsu.jrb.shikichi_shakuchiken_sonzokukikan_nengappi");
+
+        shortKeys.put("M007-10_KEY1", "jusetsu.jrb.tetsukekaijo_nengappi");
+        shortKeys.put("M007-10_KEY2", "jusetsu.jrb.yushiriyo_tokuyaku_kaijo_nengappi");
+        shortKeys.put("M007-10_KEY3", "jusetsu.jrb.jotoshodaku_tokuyaku_kaijo_nengappi");
+
+        shortKeys.put("M007-14_KEY1", "jusetsu.jrb.assen1_shodakushonin_shutokukijitsu");
+        shortKeys.put("M007-14_KEY2", "jusetsu.jrb.assen2_shodakushonin_shutokukijitsu");
+        shortKeys.put("M007-14_KEY3", "jusetsu.jrb.assen3_shodakushonin_shutokukijitsu");
+
+        shortKeys.put("M007-19_KEY1", "jusetsu.jle.kikan_kaishi_nengappi");
+        shortKeys.put("M007-19_KEY2", "jusetsu.jle.kikan_shuryo_nengappi");
+
+        shortKeys.put("M005-02_KEY9", "baikei.bpm.taishakukenjotoshodakukeiyaku_kaijokijitsu");
+        shortKeys.put("M005-02_KEY10", "baikei.bpm.yushikeiyaku_kaijokijitsu");
+        shortKeys.put("M005-02_KEY11", "baikei.bpm.futekigosenkinin_kikankisan_sentaku2_nengappi");
+        shortKeys.put("M005-02_KEY12", "baikei.bpm.tetsukekin_kaijokijitsu");
 
     }
 
@@ -195,7 +341,7 @@ public class FillTemplateDemoService extends FillTemplateFactory {
         URL url = new URL(urlString);
         try (InputStream templateStream = url.openStream()) {
         Map<String, String[][]> tableData = new HashMap<>();
-        Map<String, String> replacements = this.buildReplacementMap(data, objectWithDataType, objectWithLabel, RADIO_BUTTON_OPTIONS, RADIO_BUTTON_REPLACE_DATA,tableData);
+        Map<String, String> replacements = this.buildReplacementMap(data, objectWithDataType, objectWithLabel, RADIO_BUTTON_OPTIONS, RADIO_BUTTON_REPLACE_DATA,tableData,dateWithCheckBox,dateMonthYearWithCheckBox);
 
         return exportDataToWordFile(templateStream, replacements, objectWithDefaultData,tableData,objectWithLabel,shortKeys);
         } catch (IOException e) {
@@ -216,7 +362,7 @@ public class FillTemplateDemoService extends FillTemplateFactory {
                 }
 
                 Map<String, String[][]> tableData = new HashMap<>();
-                Map<String, String> replacements = this.buildReplacementMap(data, objectWithDataType, objectWithLabel, RADIO_BUTTON_OPTIONS, RADIO_BUTTON_REPLACE_DATA,tableData);
+                Map<String, String> replacements = this.buildReplacementMap(data, objectWithDataType, objectWithLabel, RADIO_BUTTON_OPTIONS, RADIO_BUTTON_REPLACE_DATA,tableData,dateWithCheckBox,dateMonthYearWithCheckBox);
 
                 return exportDataToWordFile(new ByteArrayInputStream(fileData), replacements, objectWithDefaultData,tableData,objectWithLabel,shortKeys);
             } catch (IOException e) {
